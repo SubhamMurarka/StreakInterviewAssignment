@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "gtihub.com/shubhammurarka/grpc/proto";
+
+service AuthService {
+    rpc Login(LoginRequest) returns (LoginResponse) {};
+    rpc Logout(LogoutRequest) returns (LogoutResponse) {};
+    rpc Register(RegisterRequest) returns (RegisterResponse) {};
+}
+
+message LoginRequest {
+    string UserName = 1;
+    string Password = 2;
+}
+
+message LoginResponse {
+    string AccessToken  = 1;
+}
+
+message LogoutRequest {
+    string AccessToken  = 1;
+}
+
+message LogoutResponse {
+    string Response = 1;
+}
+
+message RegisterRequest {
+    string UserName = 1;
+    string Password = 2;
+}
+
+message RegisterResponse {
+    string UserName = 1;
+    string Response = 2;
+}
