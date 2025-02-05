@@ -1,5 +1,7 @@
 # WorkerPool / ThreadPool
 
+This step (step1) is like setting up the basic infrastructure always do this at first.
+
 step 1 -> Prepare pool add/spawn X number of workers/go routines and give them access to channel to continuously fetch jobs/work.
 
 precaution : use waitgroups to manage go routines wg.Add() and wg.Done()
