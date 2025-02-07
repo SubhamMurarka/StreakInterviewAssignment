@@ -33,9 +33,9 @@ step 1 -> First decide and break your task into multiple sequential steps (examp
 
 step 2 -> Number of channels = Number of pipeline connections. Previous stage writes and next stage reads.
 
-step 3 -> Next stage keeps executing until writing or previous channel is not closed. this is followed in the complete chain/pipeline.
+step 3 -> Next stage keeps reading until previous channel is writing or not closed. this is followed in the complete chain/pipeline.
 
-step 4 -> Main routine finally reads from last channel and hence no pre-exit and proper synchronisation of channels.
+step 4 -> Main routine finally reads from last channel and hence no pre-exit and proper synchronisation of routines.
 
 ## Insights
 
