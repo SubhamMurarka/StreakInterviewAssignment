@@ -18,3 +18,29 @@ step 3 -> Dont Forget to Close the channel after (all the jobs are pushed) to av
 -> pool size should not be too large or too small (not optimal usage of resources).
 
 -> optimal pool size depends on hardware, task load (I/P bound, CPU load etc) on the basis of that make intelligent guess/ iterative approach.
+
+# FanIn
+// TODO
+
+# FanOut
+// TODO
+
+# Pipeline
+
+In pipeline pattern, we do synchronisation with help of channels. Waitgroups, time.Sleep() etc not required.
+
+step 1 -> First decide and break your task into multiple sequential steps (example : Processing of some data).
+
+step 2 -> Number of channels = Number of pipeline connections. Previous stage writes and next stage reads.
+
+step 3 -> Next stage keeps executing until writing or previous channel is not closed. this is followed in the complete chain/pipeline.
+
+step 4 -> Main routine finally reads from last channel and hence no pre-exit and proper synchronisation of channels.
+
+## Insights
+
+### Increasing performance of a stage
+
+-> performance of a particular stage can be increased by spawing multiple routine/ or using other patterns discussed above, hence increasing performance of that step.
+
+-> no need to store intermidiate results hence can be helpful for large datasets processing.
